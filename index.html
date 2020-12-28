@@ -9,9 +9,28 @@
 </head>
 
 <body>
-<div id="grid-container">
-    <!-- 16x16 grid of divs -->
-</div>   
+
+<header>
+    <h1>Etch-A-Sketch</h1>
+</header>
+
+<main>
+    <div id="grid-settings">
+        <!-- settings for grid size, and for resetting the grid -->
+        <button >Reset</button>
+
+        <label for="size-slider">Grid Size:</label>
+        <input type="range" min="4" max="100" value="16" class="slider" id="size-slider" name="size-slider">
+    </div>
+    
+    <div id="grid-container">
+        <!-- 16x16 grid of divs -->
+    </div>   
+    
+    <div id="sketch-settings">
+
+    </div>
+</main>
 
 <script src ="script.js"></script> 
 

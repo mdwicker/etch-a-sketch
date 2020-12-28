@@ -12,7 +12,7 @@ function initializeGrid(size) {
 
     for(i=0; i<(size*size); i++) {
         let div = document.createElement("div");
-        div.classList.add("item");
+        div.classList.add("sketchSquare");
         container.appendChild(div);
     }
 }

@@ -1,11 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Architects Daughter&display=swap");
+
+h1 {
+  font-family: "Architects Daughter", sans-serif;
+  font-size: 70px;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
 #grid-container {
   display: grid;
   gap: 0px;
-  width: 75vmin;
-  height: 75vmin;
+  width: 65vmin;
+  height: 65vmin;
 }
 
-div.item {
+.sketchSquare {
   background-color: aqua;
   border: 1px solid green;
 }
