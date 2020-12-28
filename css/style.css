@@ -1,0 +1,11 @@
+#grid-container {
+  display: grid;
+  gap: 0px;
+  width: 75vmin;
+  height: 75vmin;
+}
+
+div.item {
+  background-color: aqua;
+  border: 1px solid green;
+}
