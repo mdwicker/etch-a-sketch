@@ -1,5 +1,6 @@
 // start out the game with a 16x16 grid
 let gridSize = 16;
+let shadeSquare = shadeClassic;
 initializeGrid(gridSize);
 
 // listen for the requested grid size and update live
@@ -24,16 +25,37 @@ newBoardButton.addEventListener("click", function () {
 });
 
 
+
+// when a user hovers over a square, shade it
+
+
 // set up a new square grid with the given number of boxes per side
 function initializeGrid(size) {
     const container = document.getElementById("grid-container");
     container.innerHTML = "";
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-    container.style.gridTemplateRows = `repeat(${size}, 1fr)`
+    container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
-    for(i=0; i<(size*size); i++) {
-        let div = document.createElement("div");
-        div.classList.add("sketchSquare");
+    for(let i=0; i<size*size; i++) {
+        const div = document.createElement("div");
+        div.classList.add("square");
+        div.addEventListener("mouseover", shadeSquare);
         container.appendChild(div);
     }
+}
+
+function shadeClassic(e) {
+    this.style.backgroundColor = "grey";
+}
+
+function shadeDarken(e) {
+
+}
+
+function shadeRainbow(e) {
+    
+}
+
+function shadeErase(e) {
+
 }

@@ -49,9 +49,8 @@ div#grid-container {
   height: 65vmin;
 }
 
-.sketchSquare {
-  background-color: aqua;
-  border: 1px solid green;
+.square {
+  border: 1px solid lightgrey;
 }
 
 @media (max-width: 700px) {
