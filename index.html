@@ -17,12 +17,13 @@
 <main>
     <div id="grid-settings">
         <!-- settings for grid size, and for resetting the grid -->
-        <button id="reset">Reset</button>
-
-        <form id="grid-size">
-            <label for="size-slider">Grid Size:</label>
-            <input type="range" min="4" max="100" value="16" class="slider" id="size-slider" name="size-slider">
+        <form id="grid-size" class="settings">
+            <label for="size-input" class="grid-size">Board Size:</label>
+            <input type="range" min="4" max="50" value="16" oninput="this.nextElementSibling.value = this.value" id="size-slider" name="size-input" class="grid-size">
+            <input type="number" min="4" max="50" value=16 oninput="this.previousElementSibling.value = this.value"id="size-number" name="size-input" class="settings grid-size">
         </form>
+
+        <button id="new-board" class="settings" >New Board</button>
     </div>
     
     <div id="grid-container">

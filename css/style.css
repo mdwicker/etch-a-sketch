@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Architects Daughter&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
 h1 {
   font-family: "Architects Daughter", sans-serif;
   font-size: 10vmin;
+}
+
+.settings {
+  font-family: "Montserrat", sans-serif;
 }
 
 header {
@@ -19,7 +24,7 @@ main {
 div#grid-settings {
   display: flex;
   align-items: center;
-  width: 60vmin;
+  width: 75vmin;
   justify-content: space-around;
   padding-bottom: 10px;
 }
@@ -27,6 +32,14 @@ div#grid-settings {
 form#grid-size {
   display: flex;
   align-items: center;
+}
+
+.grid-size {
+  margin: 5px;
+}
+
+input[type="number"] {
+  width: 2rem;
 }
 
 div#grid-container {
@@ -39,4 +52,14 @@ div#grid-container {
 .sketchSquare {
   background-color: aqua;
   border: 1px solid green;
+}
+
+@media (max-width: 700px) {
+  div#grid-settings {
+    flex-direction: column;
+  }
+
+  button#new-board {
+    margin-top: 5px;
+  }
 }
