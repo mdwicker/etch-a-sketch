@@ -2,7 +2,7 @@
 
 h1 {
   font-family: "Architects Daughter", sans-serif;
-  font-size: 70px;
+  font-size: 10vmin;
 }
 
 header {
@@ -10,7 +10,26 @@ header {
   padding: 20px;
 }
 
-#grid-container {
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div#grid-settings {
+  display: flex;
+  align-items: center;
+  width: 60vmin;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+form#grid-size {
+  display: flex;
+  align-items: center;
+}
+
+div#grid-container {
   display: grid;
   gap: 0px;
   width: 65vmin;

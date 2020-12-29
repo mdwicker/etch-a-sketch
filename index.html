@@ -17,10 +17,12 @@
 <main>
     <div id="grid-settings">
         <!-- settings for grid size, and for resetting the grid -->
-        <button >Reset</button>
+        <button id="reset">Reset</button>
 
-        <label for="size-slider">Grid Size:</label>
-        <input type="range" min="4" max="100" value="16" class="slider" id="size-slider" name="size-slider">
+        <form id="grid-size">
+            <label for="size-slider">Grid Size:</label>
+            <input type="range" min="4" max="100" value="16" class="slider" id="size-slider" name="size-slider">
+        </form>
     </div>
     
     <div id="grid-container">
@@ -28,7 +30,7 @@
     </div>   
     
     <div id="sketch-settings">
-
+        <!-- settings for the sketching style -->
     </div>
 </main>
 
