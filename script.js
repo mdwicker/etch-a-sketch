@@ -1,6 +1,6 @@
 // start out the game with a 16x16 grid
 let gridSize = 16;
-let shadeSquare = shadeClassic;
+shadeMode = "classic";
 initializeGrid(gridSize);
 
 // listen for the requested grid size and update live
@@ -17,16 +17,17 @@ sizeSlider.addEventListener("input", function () {
     initializeGrid(gridSize);
 });
 
+// change shading mode depending on user settings
+const sketchModeButtons = document.querySelectorAll("button.sketch-style");
+sketchModeButtons.forEach(sketchModeButton => {
+    sketchModeButton.addEventListener("click", function () {shadeMode = sketchModeButton.id;});
+});
 
 // when the "New Board" button is pressed, generate a new board of the requested size
 const newBoardButton = document.getElementById("new-board");
 newBoardButton.addEventListener("click", function () {
     initializeGrid(gridSize);
 });
-
-
-
-// when a user hovers over a square, shade it
 
 
 // set up a new square grid with the given number of boxes per side
@@ -44,18 +45,38 @@ function initializeGrid(size) {
     }
 }
 
-function shadeClassic(e) {
-    this.style.backgroundColor = "grey";
+function shadeSquare(e) {  
+    switch(shadeMode) {
+    case "classic": 
+        shadeClassic(this);
+        break;
+    
+    case "darken":
+        shadeDarken(this);
+        break;
+    
+        case "rainbow": 
+        shadeRainbow(this);
+        break;
+    
+    case "erase":
+        shadeErase(this);
+        break;
+    }
 }
 
-function shadeDarken(e) {
+function shadeClassic(square) {
+    square.style.backgroundColor = "grey";
+}
+
+function shadeDarken(square) {
 
 }
 
-function shadeRainbow(e) {
+function shadeRainbow(square) {
     
 }
 
-function shadeErase(e) {
-
+function shadeErase(square) {
+    square.style.backgroundColor = "white"
 }

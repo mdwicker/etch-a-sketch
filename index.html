@@ -18,7 +18,7 @@
     <div id="grid-settings">
         <!-- settings for grid size, and for resetting the grid -->
         <form id="grid-size" class="settings">
-            <label for="size-input" class="grid-size">Board Size:</label>
+            <label for="size-input" class="grid-size label">Board Size:</label>
             <input type="range" min="4" max="50" value="16" oninput="this.nextElementSibling.value = this.value" id="size-slider" name="size-input" class="grid-size">
             <input type="number" min="4" max="50" value=16 oninput="this.previousElementSibling.value = this.value"id="size-number" name="size-input" class="settings grid-size">
         </form>
@@ -32,6 +32,12 @@
     
     <div id="sketch-settings">
         <!-- settings for the sketching style -->
+        <div class="settings label" id="sketch-mode-label">Sketch Mode:</div>
+
+        <button class="sketch-style settings" id="classic">Classic</button>
+        <button class="sketch-style settings" id="darken">Darken</button>
+        <button class="sketch-style settings" id="rainbow">Rainbow</button>
+        <button class="sketch-style settings" id="erase">Erase</button>
     </div>
 </main>
 
