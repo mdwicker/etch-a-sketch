@@ -48,35 +48,53 @@ function initializeGrid(size) {
 function shadeSquare(e) {  
     switch(shadeMode) {
     case "classic": 
-        shadeClassic(this);
+        this.style.backgroundColor = shadeClassic();
         break;
     
     case "darken":
-        shadeDarken(this);
+        this.style.backgroundColor = shadeDarken(this.style.backgroundColor);
         break;
     
         case "rainbow": 
-        shadeRainbow(this);
+        this.style.backgroundColor = shadeRainbow();
         break;
     
     case "erase":
-        shadeErase(this);
+        this.style.backgroundColor = shadeErase();
         break;
     }
 }
 
-function shadeClassic(square) {
-    square.style.backgroundColor = "grey";
+function getRGB(inputColor) {
+    if (!inputColor) {
+        return [255,255,255];
+    }
+    else {
+        rgb = inputColor.slice(4,-1).split(",");
+    }
+    rgb[0] = parseInt(rgb[0]);
+    rgb[1] = parseInt(rgb[1]);
+    rgb[2] = parseInt(rgb[2]);
+    return rgb;
 }
 
-function shadeDarken(square) {
 
+function shadeClassic(rgb) {
+    return "rgb(150,150,150)";
 }
 
-function shadeRainbow(square) {
+function shadeDarken(squareColor) {
+    rgb = getRGB(squareColor);
+    for (i = 0; i<rgb.length; i++) {
+        rgb[i] -= 50;
+    }
+    return `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`
+}
+
+function shadeRainbow(rgb) {
     
 }
 
-function shadeErase(square) {
-    square.style.backgroundColor = "white"
+function shadeErase(rgb) {
+    return "rgb(255,255,255)";
 }

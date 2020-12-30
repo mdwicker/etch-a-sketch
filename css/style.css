@@ -67,7 +67,6 @@ input[type="number"] {
 
 div#grid-container {
   display: grid;
-  gap: 0px;
   width: var(--grid-size);
   height: var(--grid-size);
   margin: 20px 0px;
@@ -75,7 +74,6 @@ div#grid-container {
 
 .square {
   border: 1px solid lightgrey;
-  background-color: white;
 }
 
 @media (max-width: 700px) {
