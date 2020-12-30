@@ -20,7 +20,11 @@ sizeSlider.addEventListener("input", function () {
 // change shading mode depending on user settings
 const sketchModeButtons = document.querySelectorAll("button.sketch-style");
 sketchModeButtons.forEach(sketchModeButton => {
-    sketchModeButton.addEventListener("click", function () {shadeMode = sketchModeButton.id;});
+    sketchModeButton.addEventListener("click", function () {
+        shadeMode = sketchModeButton.id;
+        sketchModeButtons.forEach(sketchModeButton => {sketchModeButton.classList.remove("active");})
+        sketchModeButton.classList.toggle("active");
+    });
 });
 
 // when the "Reset" button is pressed, generate a new board of the requested size
