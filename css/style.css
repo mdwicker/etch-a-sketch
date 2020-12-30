@@ -83,7 +83,7 @@ div#grid-container {
     flex-direction: column;
   }
 
-  button#new-board {
+  button#reset {
     margin-top: 5px;
   }
 }

@@ -23,9 +23,9 @@ sketchModeButtons.forEach(sketchModeButton => {
     sketchModeButton.addEventListener("click", function () {shadeMode = sketchModeButton.id;});
 });
 
-// when the "New Board" button is pressed, generate a new board of the requested size
-const newBoardButton = document.getElementById("new-board");
-newBoardButton.addEventListener("click", function () {
+// when the "Reset" button is pressed, generate a new board of the requested size
+const resetButton = document.getElementById("reset");
+resetButton.addEventListener("click", function () {
     initializeGrid(gridSize);
 });
 
@@ -38,7 +38,7 @@ function initializeGrid(size) {
     container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
     for(let i=0; i<size*size; i++) {
-        const div = document.createElement("div");
+        let div = document.createElement("div");
         div.classList.add("square");
         div.addEventListener("mouseover", shadeSquare);
         container.appendChild(div);
