@@ -79,22 +79,23 @@ function getRGB(inputColor) {
 }
 
 
-function shadeClassic(rgb) {
+function shadeClassic() {
     return "rgb(150,150,150)";
 }
 
 function shadeDarken(squareColor) {
     rgb = getRGB(squareColor);
     for (i = 0; i<rgb.length; i++) {
-        rgb[i] -= 50;
+        rgb[i] -= 30;
     }
     return `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`
 }
 
-function shadeRainbow(rgb) {
-    
+function shadeRainbow() {
+    rgb = [Math.floor(Math.random()*255),Math.floor(Math.random()*255),Math.floor(Math.random()*255)];
+    return `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`
 }
 
-function shadeErase(rgb) {
+function shadeErase() {
     return "rgb(255,255,255)";
 }
